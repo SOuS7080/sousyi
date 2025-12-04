@@ -7,10 +7,6 @@ class User(models.Model):
     class Meta:
         verbose_name = "Пользователь"
         verbose_name_plural = "Пользователи"
-        ordering = ['Username']
-    
-    def __str__(self):
-        return self.Username
 
 class Artist(models.Model):
     name = models.CharField("Имя исполнителя", max_length=50)
@@ -19,10 +15,6 @@ class Artist(models.Model):
     class Meta:
         verbose_name = "Исполнитель"
         verbose_name_plural = "Исполнители"
-        ordering = ['Name']
-    
-    def __str__(self):
-        return self.Name
 
 class Genre(models.Model):
     name = models.CharField("Название жанра", max_length=50)
@@ -31,10 +23,6 @@ class Genre(models.Model):
     class Meta:
         verbose_name = "Жанр"
         verbose_name_plural = "Жанры"
-        ordering = ['Name']
-    
-    def __str__(self):
-        return self.Name
 
 class Album(models.Model):
     title = models.CharField("Название Альбома", max_length=50)
@@ -45,10 +33,6 @@ class Album(models.Model):
     class Meta:
         verbose_name = "Альбом"
         verbose_name_plural = "Альбомы"
-        ordering = ['-Release_date', 'Title']
-    
-    def __str__(self):
-        return self.Title
 
 class Track(models.Model):
     title = models.CharField("Название трека", max_length=50)
@@ -60,10 +44,6 @@ class Track(models.Model):
     class Meta:
         verbose_name = "Трек"
         verbose_name_plural = "Треки"
-        ordering = ['Title']
-    
-    def __str__(self):
-        return self.Title
 
 class Playlist(models.Model):
     title = models.CharField("Название плейлиста", max_length=50)
@@ -74,7 +54,3 @@ class Playlist(models.Model):
     class Meta:
         verbose_name = "Плейлист"
         verbose_name_plural = "Плейлисты"
-        ordering = ['-Created_at', 'Title']
-    
-    def __str__(self):
-        return self.Title
