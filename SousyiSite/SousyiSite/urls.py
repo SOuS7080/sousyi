@@ -16,7 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.shortcuts import render
+from sousyi import views
+
+def home_view(request):
+    """Главная страница - только статика из main.html"""
+    return render(request, 'main.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home_view, name='home'),
+    path('tracks/', views.tracks_page, name='tracks'),
 ]
